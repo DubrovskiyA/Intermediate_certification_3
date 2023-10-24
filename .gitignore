@@ -1,0 +1,5 @@
+*.iml
+.idea
+target
+allure-report
+allure-results

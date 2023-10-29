@@ -2,6 +2,7 @@ import Ext.APIcleaner;
 import Page.BooksPage;
 import Page.LoginPage;
 import Page.ProfilePage;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,6 +34,10 @@ public class Tests {
     }
     @Test
     @DisplayName("Сценарий 1")
+    @Description("1. Открыть страницу https://demoqa.com/login\n" +
+            "2. Ввести логин и пароль\n" +
+            "3. Перейти в раздел https://demoqa.com/profile\n" +
+            "4. Проверить, что таблица пустая")
     public void test1(){
         LoginPage loginPage=new LoginPage(driver);
         loginPage.open();
@@ -45,6 +50,12 @@ public class Tests {
     }
     @Test
     @DisplayName("Сценарий 2")
+    @Description("1. Открыть страницу https://demoqa.com/login\n" +
+            "2. Ввести логин и пароль\n" +
+            "3. Перейти в раздел https://demoqa.com/books\n" +
+            "4. Добавить в коллекцию 6 книг\n" +
+            "5. Перейти в раздел https://demoqa.com/profile\n" +
+            "6. Проверить, что в коллекции отображается 6 книг")
     public void test2(){
         LoginPage page=new LoginPage(driver);
         page.open();
@@ -61,6 +72,16 @@ public class Tests {
     }
     @Test
     @DisplayName("Сценарий 3")
+    @Description("1. Открыть страницу https://demoqa.com/login\n" +
+            "2. Ввести логин и пароль\n" +
+            "3. Перейти в раздел https://demoqa.com/books\n" +
+            "4. Добавить в коллекцию 2 книги\n" +
+            "5. Перейти в раздел https://demoqa.com/profile\n" +
+            "6. Проверить, что в коллекции отображается 2 книги\n" +
+            "7. Перейти в раздел https://demoqa.com/profile\n" +
+            "8. Нажать Delete All Books\n" +
+            "9. Вернуться в раздел https://demoqa.com/profile\n" +
+            "10. Проверить, что таблица пустая")
     public void test3(){
         LoginPage page=new LoginPage(driver);
         page.open();
